@@ -2,22 +2,33 @@ package com.example.coldcallingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Button;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.net.Uri;
-import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] mPeople=new String[]{"aamiarali","adrian_yan","alexaney","bipra_dey","daniel_dulstin","darren_dong","dhruv_amin","eden_kogan","eli_bui","elie_belkin","evelyn_paskhaver","fardin_iqbal","jerry_he","kenny_cao","marc_rosenberg","matthewchen", "michael","minglin","noam","ralf_pacia","samuel_iskhakov","sean","selina_li","shuyue_chen","tanushri_sundaram","vasu","xinrui_ge","zhian_maysoon"};
+
+    private Student[] mstudents = new Student[]{
+            new Student("aamiarali", "Aamir Ali"),
+            new Student("adrian_yan", "Adrian Yan"),
+            new Student("alexaney", "Alex Aney"),
+            new Student("bipra_dey", "Bipra Dey"),
+            new Student("daniel_dulstin", "Daniel Dulstin"),
+            new Student("darren_dong", "Darren Dong"),
+            new Student("dhruv_amin", "Dhruv Amin"),
+            new Student("eden_kogan", "Eden Kogan"),
+            new Student("eli_bui", "Eli Bui"),
+            new Student("elie_belkin", "Elie Belkin"),
+            new Student("evelyn_paskhaver", "Evelyn Paskhaver"),
+            new Student("fardin_iqbal", "Fardin Iqbal"),
+            new Student("jerry_he", "Jerry He")
+    };
+    //private String[] mPeople= new String[]{"aamiarali","adrian_yan","alexaney","bipra_dey","daniel_dulstin","darren_dong","dhruv_amin","eden_kogan","eli_bui","elie_belkin","evelyn_paskhaver","fardin_iqbal","jerry_he","kenny_cao","marc_rosenberg","matthewchen", "michael","minglin","noam","ralf_pacia","samuel_iskhakov","sean","selina_li","shuyue_chen","tanushri_sundaram","vasu","xinrui_ge","zhian_maysoon"};
     private TextView mText;
     private ImageView mImage;
-    private Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mText=(TextView)findViewById(R.id.text_value_view);
-        String name=mPeople[(int)(Math.random()*33)];
-        mText.setText(name);
+        int studentIndex = (int)(Math.random()*12);
+        String name = (mstudents[studentIndex]).getName();
+        mText.setText((mstudents[studentIndex]).getDisplayName());
         mImage=(ImageView)findViewById(R.id.imageView);
-        uri= Uri.parse("@drawable/"+name);
-        mImage.setImageURI(uri);
+        String uri = "@drawable/"+name;
+        int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+        Drawable res = getResources().getDrawable(imageResource);
+        mImage.setImageDrawable(res);
     }
 
 
