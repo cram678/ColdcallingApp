@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     //private String[] mPeople= new String[]{"aamiarali","adrian_yan","alexaney","bipra_dey","daniel_dulstin","darren_dong","dhruv_amin","eden_kogan","eli_bui","elie_belkin","evelyn_paskhaver","fardin_iqbal","jerry_he","kenny_cao","marc_rosenberg","matthewchen", "michael","minglin","noam","ralf_pacia","samuel_iskhakov","sean","selina_li","shuyue_chen","tanushri_sundaram","vasu","xinrui_ge","zhian_maysoon"};
     private TextView mText;
     private ImageView mImage;
+    private Button mRandomButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,21 @@ public class MainActivity extends AppCompatActivity {
         Drawable res = getResources().getDrawable(imageResource);
         mImage.setImageDrawable(res);
     }
+    mRandomButton = (Button) findViewById(R.id.next_button);
+    mRandomButton.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            mText=(TextView)findViewById(R.id.text_value_view);
+            int studentIndex = (int)(Math.random()*12);
+            String name = (mstudents[studentIndex]).getName();
+            mText.setText((mstudents[studentIndex]).getDisplayName());
+            mImage=(ImageView)findViewById(R.id.imageView);
+            String uri = "@drawable/"+name;
+            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            mImage.setImageDrawable(res);
+        }
+    });
 
 
 }
