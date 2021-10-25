@@ -1,12 +1,3 @@
 <resources>
     <string name="app_name">ColdCallingApp</string>
-    <string name="aamir">"Aamir Ali"</string>
-    <string name="adrian">"Adrian Yan"</string>
-    <string name="alex">"Alex Aney"</string>
-    <string name="bipra">"Bipra Dey"</string>
-    <string name="daniel">"Daniel Dulstin"</string>
-    <string name="darren">"Darren Dong"</string>
-    <string name="eden">"Eden Kogan"</string>
-    <string name="eli">"Eli Bui"</string>
-    <string name="blank">""</string>
 </resources>
