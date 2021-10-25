@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
+        <entry key="..\:/Users/monmo/AndroidStudioProjects/ColdCallingApp/ColdcallingApp/app/src/main/res/layout/activity_main.xml" value="0.15830800405268491" />
+=======
+        <entry key="..\:/Users/monmo/AndroidStudioProjects/ColdCallingApp/ColdcallingApp/app/src/main/res/layout/activity_called.xml" value="0.14221014492753623" />
+        <entry key="..\:/Users/monmo/AndroidStudioProjects/ColdCallingApp/ColdcallingApp/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
+>>>>>>> Stashed changes
         <entry key="..\:/Users/monmo/AndroidStudioProjects/ColdCallingApp/app/src/main/res/layout/activity_main.xml" value="0.16354166666666667" />
       </map>
     </option>

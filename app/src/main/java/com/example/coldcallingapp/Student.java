@@ -20,4 +20,8 @@ public class Student {
     public String getDisplayName() {
         return displayName;
     }
+
+    public void setCalled(boolean called) {
+        this.called = called;
+    }
 }
